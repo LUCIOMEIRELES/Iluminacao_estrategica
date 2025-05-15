@@ -1,385 +1,273 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Iluminação Estratégica – Aumente suas vendas</title>
-<style>
-  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
-
-  :root {
-    --cinza-escuro: #3A4550;
-    --cinza-medio: #7E8C97;
-    --cinza-claro: #B1B9C1;
-    --cinza-claro-textura: #e5e5e5;
-    --branco: #DDE1E6;
-    --btn-bg: #7E8C97;
-    --btn-bg-hover: #6a7886;
-  }
-
-  * {
-    box-sizing: border-box;
-  }
-
-  body {
-    margin: 0;
-    font-family: 'Montserrat', sans-serif;
-    background: var(--cinza-claro-textura);
-    color: var(--cinza-escuro);
-  }
-
-  /* Textura sutil de concreto claro */
-  body::before {
-    content: "";
-    position: fixed;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background: url('https://www.transparenttextures.com/patterns/concrete-texture.png') repeat;
-    opacity: 0.08;
-    pointer-events: none;
-    z-index: -1;
-  }
-
-  .container {
-    max-width: 480px;
-    margin: 40px auto 80px;
-    background: var(--branco);
-    border-radius: 24px;
-    box-shadow: 0 10px 40px rgba(0,0,0,0.1);
-    overflow: hidden;
-  }
-
-  header {
-    background: var(--cinza-escuro);
-    color: var(--branco);
-    padding: 24px 30px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 600;
-    letter-spacing: 4px;
-    font-size: 1.15rem;
-    font-feature-settings: "liga", "clig";
-    user-select: none;
-  }
-
-  /* Hero section */
-  .hero {
-    padding: 48px 30px 60px;
-    text-align: center;
-    position: relative;
-  }
-
-  .hero h1 {
-    font-weight: 700;
-    font-size: 2.2rem;
-    margin: 0 0 16px;
-    letter-spacing: 2px;
-    color: var(--cinza-escuro);
-  }
-
-  .hero h1 span {
-    color: var(--cinza-medio);
-  }
-
-  .hero p {
-    font-weight: 400;
-    font-size: 1.05rem;
-    margin: 0 0 36px;
-    color: var(--cinza-medio);
-  }
-
-  /* Botão CTA cinza */
-  .btn-cta {
-    background-color: var(--btn-bg);
-    color: var(--cinza-claro);
-    font-weight: 700;
-    font-size: 1.2rem;
-    padding: 16px 30px;
-    border-radius: 30px;
-    border: none;
-    cursor: pointer;
-    box-shadow: 0 5px 0 var(--cinza-escuro);
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    display: inline-flex;
-    align-items: center;
-    gap: 12px;
-    user-select: none;
-  }
-  .btn-cta:hover {
-    background-color: var(--btn-bg-hover);
-    transform: translateY(-3px);
-  }
-  .btn-cta:active {
-    transform: translateY(0);
-    box-shadow: none;
-  }
-
-  /* Ícone download */
-  .btn-cta svg {
-    width: 22px;
-    height: 22px;
-    fill: var(--cinza-claro);
-  }
-
-  /* Benefícios */
-  .benefits {
-    background: var(--cinza-escuro);
-    color: var(--branco);
-    padding: 40px 30px;
-    border-radius: 0 0 24px 24px;
-    margin-top: -48px;
-    box-shadow: 0 10px 25px rgba(58,69,80,0.2);
-  }
-
-  .benefits ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-
-  .benefits li {
-    display: flex;
-    align-items: center;
-    font-weight: 500;
-    font-size: 1rem;
-    margin-bottom: 20px;
-    gap: 16px;
-  }
-
-  .benefits li:last-child {
-    margin-bottom: 0;
-  }
-
-  .benefits li svg {
-    width: 22px;
-    height: 22px;
-    fill: var(--cinza-medio);
-    flex-shrink: 0;
-  }
-
-  /* Formulário */
-  form {
-    margin: 40px 30px 60px;
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
-  }
-
-  input, select {
-    padding: 14px 20px;
-    border-radius: 12px;
-    border: 2px solid var(--cinza-claro);
-    font-size: 1rem;
-    font-weight: 600;
-    color: var(--cinza-escuro);
-    transition: border-color 0.3s ease;
-  }
-
-  input::placeholder,
-  select option:first-child {
-    color: var(--cinza-medio);
-    font-weight: 400;
-  }
-
-  input:focus, select:focus {
-    outline: none;
-    border-color: var(--cinza-medio);
-    box-shadow: 0 0 8px #7e8c9755;
-  }
-
-  /* Botão enviar do formulário */
-  button[type="submit"] {
-    background-color: var(--btn-bg);
-    color: var(--cinza-claro);
-    font-weight: 700;
-    font-size: 1.15rem;
-    padding: 16px 0;
-    border-radius: 30px;
-    border: none;
-    cursor: pointer;
-    box-shadow: 0 5px 0 var(--cinza-escuro);
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 12px;
-    user-select: none;
-  }
-  button[type="submit"]:hover {
-    background-color: var(--btn-bg-hover);
-    transform: translateY(-3px);
-  }
-  button[type="submit"]:active {
-    transform: translateY(0);
-    box-shadow: none;
-  }
-  button[type="submit"] svg {
-    width: 22px;
-    height: 22px;
-    fill: var(--cinza-claro);
-  }
-
-  /* Prova social */
-  .testimonial {
-    background: var(--cinza-claro);
-    color: var(--cinza-escuro);
-    font-style: italic;
-    font-weight: 500;
-    margin: 0 30px 60px;
-    padding: 24px 30px;
-    border-radius: 20px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-    position: relative;
-    font-size: 1rem;
-    user-select: none;
-  }
-
-  .testimonial::before {
-    content: "“";
-    font-size: 3rem;
-    color: var(--cinza-medio);
-    position: absolute;
-    top: 15px;
-    left: 20px;
-    opacity: 0.3;
-    font-weight: 700;
-    user-select: none;
-  }
-
-  /* Rodapé */
-  footer {
-    text-align: center;
-    padding: 24px 20px;
-    font-size: 0.9rem;
-    color: var(--cinza-medio);
-    user-select: none;
-  }
-
-  footer .contact {
-    margin-bottom: 8px;
-  }
-
-  footer .selo {
-    font-weight: 700;
-    color: var(--cinza-escuro);
-  }
-
-  /* Responsividade */
-  @media (max-width: 520px) {
-    .container {
-      margin: 20px 15px 50px;
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Iluminação Estratégica - eBook Gratuito</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --cinza-escuro: #3A4550;
+      --cinza-medio: #7E8C97;
+      --cinza-claro: #B1B9C1;
+      --branco: #f9f9f9;
     }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background-color: var(--cinza-escuro);
+      color: var(--cinza-escuro);
+    }
+
+    .wrapper {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 60px 40px;
+      background-color: var(--branco);
+      box-shadow: 0 0 60px rgba(0,0,0,0.1);
+      border-radius: 16px;
+    }
+
+    .logo {
+      text-align: center;
+      font-size: 1rem;
+      font-weight: 600;
+      letter-spacing: 2px;
+      color: var(--cinza-medio);
+      margin-bottom: 40px;
+    }
+
+    .hero {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
     .hero h1 {
-      font-size: 1.8rem;
-      letter-spacing: 1.5px;
+      font-size: 2.8rem;
+      font-weight: 700;
+      color: var(--cinza-escuro);
+      margin-bottom: 20px;
     }
+
+    .hero span {
+      color: var(--cinza-medio);
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      color: var(--cinza-medio);
+      max-width: 600px;
+      margin: 0 auto 30px;
+    }
+
+    .btn {
+      background-color: var(--cinza-medio);
+      color: white;
+      padding: 16px 36px;
+      font-size: 1rem;
+      font-weight: 600;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: #6a7886;
+    }
+
     .benefits {
-      padding: 30px 20px;
+      display: flex;
+      justify-content: space-around;
+      margin: 60px 0;
+      gap: 20px;
+      flex-wrap: wrap;
     }
+
+    .benefit {
+      background-color: var(--cinza-escuro);
+      color: white;
+      border-radius: 12px;
+      padding: 24px;
+      flex: 1;
+      min-width: 250px;
+      opacity: 0.9;
+      transition: opacity 0.4s ease, transform 0.4s ease;
+    }
+
+    .benefit:hover {
+      opacity: 1;
+      transform: translateY(-5px);
+    }
+
+    .form-section {
+      max-width: 600px;
+      margin: 0 auto 60px;
+    }
+
     form {
-      margin: 30px 20px 50px;
-      gap: 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
     }
+
+    input, select {
+      padding: 14px 20px;
+      font-size: 1rem;
+      border-radius: 10px;
+      border: 1px solid var(--cinza-claro);
+    }
+
     .testimonial {
-      margin: 0 20px 50px;
-      font-size: 0.95rem;
-      padding: 20px 20px;
+      background-color: var(--cinza-claro);
+      padding: 24px;
+      border-left: 5px solid var(--cinza-medio);
+      font-style: italic;
+      margin: 40px auto;
+      max-width: 600px;
+      color: var(--cinza-escuro);
+      opacity: 0.9;
+      transition: opacity 0.4s ease, transform 0.4s ease;
     }
-  }
-</style>
+
+    .testimonial:hover {
+      opacity: 1;
+      transform: scale(1.02);
+    }
+
+    .about {
+      background-color: var(--cinza-medio);
+      color: white;
+      padding: 40px;
+      border-radius: 12px;
+      margin: 60px auto;
+      max-width: 800px;
+      text-align: center;
+    }
+
+    .about h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+
+    .about p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+
+    footer {
+      text-align: center;
+      color: var(--cinza-medio);
+      font-size: 0.9rem;
+      margin-top: 40px;
+      padding-bottom: 60px;
+    }
+
+    .slogan {
+      font-weight: bold;
+      color: var(--cinza-escuro);
+      margin-top: 10px;
+      font-size: 1rem;
+      text-transform: uppercase;
+    }
+
+    .whatsapp-float {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 999;
+    }
+
+    .whatsapp-float a {
+      background-color: #25d366;
+      color: white;
+      border-radius: 50%;
+      padding: 16px;
+      text-align: center;
+      display: inline-block;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      transition: transform 0.3s ease;
+    }
+
+    .whatsapp-float a:hover {
+      transform: scale(1.1);
+    }
+
+    .whatsapp-float svg {
+      width: 28px;
+      height: 28px;
+      fill: white;
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2rem;
+      }
+      .benefits {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
 </head>
 <body>
-
-  <div class="container" role="main" aria-label="Landing page para captação do ebook Iluminação Estratégica">
-
-    <header aria-label="Logotipo Lúcio Meireles Arquiteto e Urbanista">
-      LÚCIO MEIRELES | ARQUITETO E URBANISTA
-    </header>
-
-    <section class="hero" aria-label="Seção principal com chamada para baixar ebook">
+  <div class="wrapper">
+    <div class="logo">LÚCIO MEIRELES | ARQUITETO E URBANISTA</div>
+    <section class="hero">
       <h1>AUMENTE ATÉ <span>40%</span> SUAS VENDAS COM ILUMINAÇÃO ESTRATÉGICA</h1>
-      <p>Baixe o ebook gratuito e descubra técnicas usadas por lojas premium</p>
-      <button class="btn-cta" onclick="document.getElementById('form-captura').scrollIntoView({behavior:'smooth'})" aria-label="Ir para formulário para receber ebook">
-        QUERO MEU EBOOK GRÁTIS
-        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 16l4-5h-3V4h-2v7H8l4 5z"></path></svg>
-      </button>
+      <p>Baixe o ebook gratuito e descubra técnicas usadas por lojas renomadas para captar mais clinetes e agregar mais valor ao seu espaço.</p>
+      <button class="btn" onclick="document.getElementById('form').scrollIntoView({behavior: 'smooth'})">QUERO MEU EBOOK GRÁTIS</button>
     </section>
 
-    <section class="benefits" aria-label="Benefícios do ebook">
-      <ul>
-        <li>
-          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 16.172l-3.586-3.586-1.414 1.414L9 19 20 8l-1.414-1.414z"/></svg>
-          Técnicas validadas por Harvard e MIT
-        </li>
-        <li>
-          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 16.172l-3.586-3.586-1.414 1.414L9 19 20 8l-1.414-1.414z"/></svg>
-          Caso real: +28% em vendas premium (em 30 dias)
-        </li>
-        <li>
-          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 16.172l-3.586-3.586-1.414 1.414L9 19 20 8l-1.414-1.414z"/></svg>
-          Aplicável para lojas, restaurantes e escritórios
-        </li>
-      </ul>
+    <section class="benefits">
+      <div class="benefit">Técnicas validadas por Harvard e MIT</div>
+      <div class="benefit">Caso real: +28% em vendas premium (em 30 dias)</div>
+      <div class="benefit">Aplicável para lojas, restaurantes e escritórios</div>
     </section>
 
-    <form id="form-captura" action="https://formspree.io/f/xdkgypea" method="POST" onsubmit="enviar(event)" novalidate aria-label="Formulário para captação de leads">
-      <input type="text" name="nome" placeholder="Seu nome" required aria-required="true" />
-      <input type="email" name="email" placeholder="Seu e-mail" required aria-required="true" />
-      <select name="segmento" required aria-required="true" aria-label="Selecione o segmento do seu negócio">
-        <option value="" disabled selected>Qual é o segmento do seu negócio?</option>
-        <option value="moda">Moda (loja de roupas, calçados, acessórios)</option>
-        <option value="beleza">Beleza e estética</option>
-        <option value="saude">Saúde (clínicas, consultórios, farmácias)</option>
-        <option value="alimentacao">Alimentação (cafeterias, restaurantes, bares)</option>
-        <option value="servicos">Serviços em geral</option>
-        <option value="varejo">Varejo em geral</option>
-        <option value="joias">Joias e semi-joias</option>
-        <option value="moveis">Móveis e decoração</option>
-        <option value="automotivo">Automotivo (showrooms, oficinas)</option>
-        <option value="esportes">Esporte, saúde e bem-estar</option>
-        <option value="outro">Outro</option>
-      </select>
-      <button type="submit" aria-label="Enviar formulário para receber o eBook">
-        RECEBER EBOOK GRÁTIS
-        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 16l4-5h-3V4h-2v7H8l4 5z"></path></svg>
-      </button>
-    </form>
+    <section class="form-section" id="form">
+      <form action="https://formspree.io/f/xdkgypea" method="POST">
+        <input type="text" name="nome" placeholder="Seu nome" required>
+        <input type="email" name="email" placeholder="Seu e-mail" required>
+        <select name="segmento" required>
+          <option disabled selected>Qual é o segmento do seu negócio?</option>
+          <option value="moda">Moda</option>
+          <option value="beleza">Beleza e Estética</option>
+          <option value="saude">Saúde</option>
+          <option value="alimentacao">Alimentação</option>
+          <option value="servicos">Serviços</option>
+          <option value="varejo">Varejo em geral</option>
+        </select>
+        <button class="btn" type="submit">RECEBER EBOOK</button>
+      </form>
+    </section>
 
-    <section class="testimonial" aria-label="Depoimento de cliente satisfeito">
-      "Apliquei as dicas do ebook e clientes elogiaram a 'nova atmosfera' da loja!" – Ana L., Boutique de Luxo
+    <div class="testimonial">"Apliquei as dicas do ebook e clientes elogiaram a 'nova atmosfera' da loja!" – Ana L., Boutique de Luxo</div>
+    <div class="testimonial">"As estratégias de iluminação realmente aumentaram meu faturamento. Meu restaurante agora é mais acolhedor e moderno." – Carlos F., Restaurante </div>
+    <div class="testimonial">"Em menos de um mês, senti o impacto nas vendas e na permanência dos clientes. Vale cada dica!" – Beatriz M., Loja de Calçados</div>
+    <div class="testimonial">"Transformou totalmente nosso consultório. A iluminação trouxe uma sensação de sofisticação e conforto para os pacientes." – Dr. Renato A., Clínica d Estética</div>
+
+    <section class="about">
+      <h2>Sobre Lúcio Meireles</h2>
+      <p>Sou arquiteto e urbanista com mais de 5 anos de experiência no mercado de arquitetura comercial de alto padrão. Nos últimos anos, venho me especializando em lighting design, transformando espaços sem vida em verdadeiros ímãs de clientes. Acredito que uma boa iluminação é capaz de gerar mais conforto, valor percebido e aumento direto nas vendas.</p>
     </section>
 
     <footer>
-      <div class="contact" aria-label="Contato do escritório">
-        📞 (96) 98403-4253 | ✉ jluciosegundo@gmail.com
-      </div>
-      <div class="selo" aria-label="Selo de arquitetura comercial especializada">
-        ARQUITETURA COMERCIAL ESPECIALIZADA
-      </div>
+      📞 (96) 98403-4253 | ✉ jluciosegundo@gmail.com<br>
+      <div class="slogan">EXCELÊNCIA PARA QUEM EXIGE O EXTRAORDINÁRIO</div>
     </footer>
-
   </div>
 
-<script>
-  function enviar(e) {
-    e.preventDefault();
-    const form = e.target;
-    const data = new FormData(form);
-
-    fetch(form.action, {
-      method: 'POST',
-      body: data,
-      headers: { 'Accept': 'application/json' }
-    }).then(response => {
-      if (response.ok) {
-        alert('Enviado com sucesso! Você será redirecionado para o download do eBook.');
-        window.location.href = 'https://drive.google.com/file/d/1Jp_HoyRZSsiqpKTw3eQazdcdyxyvSmvv/view?usp=drive_link';
-      } else {
-        alert('Erro ao enviar. Por favor, tente novamente.');
-      }
-    });
-  }
-</script>
-
+  <div class="whatsapp-float">
+    <a href="https://wa.me/message/C3WXQ4EL7UYBF1" target="_blank" aria-label="Fale conosco pelo WhatsApp">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M19.11 17.473c-.275-.138-1.626-.8-1.878-.89-.252-.093-.437-.138-.623.137-.184.275-.714.89-.876 1.073-.162.184-.323.207-.598.07-.275-.138-1.162-.428-2.212-1.362-.818-.73-1.37-1.63-1.53-1.904-.162-.275-.017-.424.122-.562.126-.125.275-.322.413-.483.138-.162.184-.275.275-.46.092-.184.046-.345-.023-.483-.068-.138-.622-1.5-.852-2.05-.224-.538-.452-.464-.622-.472-.16-.006-.344-.008-.53-.008-.183 0-.48.07-.732.345-.253.275-.964.94-.964 2.29 0 1.351.986 2.653 1.122 2.837.137.184 1.94 2.963 4.694 4.15.657.283 1.17.452 1.57.577.66.21 1.26.18 1.733.11.529-.08 1.626-.663 1.857-1.305.23-.644.23-1.194.16-1.305-.068-.11-.252-.184-.528-.322m-3.11 9.848c-1.285 0-2.542-.208-3.724-.617l-4.15.61.652-4.044c-.829-1.145-1.456-2.41-1.857-3.76-.407-1.358-.612-2.766-.61-4.187.007-2.354.704-4.645 2.008-6.596C9.548 5.78 10.65 4.784 11.9 4.05c1.251-.732 2.654-1.12 4.11-1.118h.01c4.198 0 7.682 2.77 8.907 6.764 1.14 3.685.103 7.637-2.705 10.354-1.692 1.66-3.91 2.653-6.212 2.893-.59.063-1.184.095-1.777.095m7.467-17.305C21.875 6.072 19.32 4.51 16.374 4.51h-.01c-1.195 0-2.354.322-3.377.935-.94.55-1.747 1.312-2.37 2.237-1.047 1.527-1.6 3.32-1.607 5.165-.002 1.24.19 2.468.573 3.65.384 1.282 1.017 2.475 1.86 3.53l-.384 2.38 2.45-.36c1.02.528 2.107.892 3.234 1.084 2.038.325 4.154-.23 5.81-1.542 2.398-2.134 3.305-5.47 2.373-8.525-.877-2.84-2.708-4.887-5.156-5.969"/></svg>
+    </a>
+  </div>
 </body>
 </html>
