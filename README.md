@@ -216,18 +216,17 @@
     }
   </style>
   <script>
-    function redirecionarParaEbook() {
-      alert("Muito obrigado por baixar o eBook! Você será redirecionado agora.");
-      window.location.href = "https://drive.google.com/file/d/1Jp_HoyRZSsiqpKTw3eQazdcdyxyvSmvv/view?usp=drive_link";
-    }
-  </script>
+  function redirecionarParaEbook() {
+    alert("Muito obrigado por baixar o eBook! Você será redirecionado agora.");
+  }
+</script>
 </head>
 <body>
   <div class="wrapper">
     <div class="logo">LÚCIO MEIRELES | ARQUITETO E URBANISTA</div>
     <section class="hero">
       <h1>AUMENTE ATÉ <span>40%</span> SUAS VENDAS COM ILUMINAÇÃO ESTRATÉGICA</h1>
-      <p>Baixe o ebook gratuito e descubra técnicas usadas por lojas renomadas para captar mais clientes e transformar seu espaço em um ambiente mais aconchegante.</p>
+      <p>Revelado: as estratégias de iluminação que lojas de luxo escondem para criar desejo imediato nos clientes – guia gratuito para você copiar!</p>
       <button class="btn" onclick="document.getElementById('form').scrollIntoView({behavior: 'smooth'})">QUERO MEU EBOOK GRÁTIS</button>
     </section>
 
@@ -238,7 +237,7 @@
     </section>
 
     <section class="form-section" id="form">
-      <form action="https://formspree.io/f/xdkgypea" method="POST" onsubmit="redirecionarParaEbook(); return true;">
+      <form action="https://formspree.io/f/xdkgypea" method="POST" onsubmit="setTimeout(function() { window.location.href = 'https://drive.google.com/file/d/1Jp_HoyRZSsiqpKTw3eQazdcdyxyvSmvv/view?usp=drive_link'; }, 1000); return true;">
         <input type="text" name="nome" placeholder="Seu nome" required>
         <input type="email" name="email" placeholder="Seu e-mail" required>
         <select name="segmento" required>
@@ -247,8 +246,10 @@
           <option value="beleza">Beleza e Estética</option>
           <option value="saude">Saúde</option>
           <option value="alimentacao">Alimentação</option>
+          <option value="academia">Academia</option>
           <option value="servicos">Serviços</option>
           <option value="varejo">Varejo em geral</option>
+          <option value="escritório">Escritório</option>
         </select>
         <button class="btn" type="submit">RECEBER EBOOK</button>
       </form>
@@ -257,9 +258,9 @@
     <!-- Restante da página permanece igual -->
 
     <div class="testimonial">"Apliquei as dicas do ebook e clientes elogiaram a 'nova atmosfera' da loja!" – Ana L., Boutique de Luxo</div>
-    <div class="testimonial">"As estratégias de iluminação realmente aumentaram meu faturamento. Meu restaurante agora é mais acolhedor e moderno." – Carlos F., Restaurante Sabor Regional</div>
+    <div class="testimonial">"As estratégias de iluminação realmente aumentaram meu faturamento. Meu restaurante agora é mais acolhedor e moderno." – Carlos F., Restaurante Central</div>
     <div class="testimonial">"Em menos de um mês, senti o impacto nas vendas e na permanência dos clientes. Vale cada dica!" – Beatriz M., Loja de Calçados</div>
-    <div class="testimonial">"Transformou totalmente nosso consultório. A iluminação trouxe uma sensação de sofisticação e conforto para os pacientes." – Dr. Renato A., Clínica de Estética</div>
+    <div class="testimonial">"Transformou totalmente nosso consultório. A iluminação trouxe uma sensação de sofisticação e conforto para os pacientes." – Dr. Renato A., Clínica Premium</div>
 
     <section class="about">
       <h2>Sobre Lúcio Meireles</h2>
