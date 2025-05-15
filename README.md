@@ -258,9 +258,9 @@
     <!-- Restante da página permanece igual -->
 
     <div class="testimonial">"Apliquei as dicas do ebook e clientes elogiaram a 'nova atmosfera' da loja!" – Ana L., Boutique de Luxo</div>
-    <div class="testimonial">"As estratégias de iluminação realmente aumentaram meu faturamento. Meu restaurante agora é mais acolhedor e moderno." – Carlos F., Restaurante Central</div>
+    <div class="testimonial">"As estratégias de iluminação realmente aumentaram meu faturamento. Meu restaurante agora é mais acolhedor e moderno." – Carlos F., Restaurante Regional</div>
     <div class="testimonial">"Em menos de um mês, senti o impacto nas vendas e na permanência dos clientes. Vale cada dica!" – Beatriz M., Loja de Calçados</div>
-    <div class="testimonial">"Transformou totalmente nosso consultório. A iluminação trouxe uma sensação de sofisticação e conforto para os pacientes." – Dr. Renato A., Clínica Premium</div>
+    <div class="testimonial">"Transformou totalmente nosso consultório. A iluminação trouxe uma sensação de sofisticação e conforto para os pacientes." – Dr. Renato A., Clínica de Estética</div>
 
     <section class="about">
       <h2>Sobre Lúcio Meireles</h2>
