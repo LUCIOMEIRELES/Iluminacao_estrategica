@@ -6,8 +6,6 @@
   <title>Iluminação Estratégica - eBook Gratuito</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
-    header, h1:first-of-type, .site-header, .page-header {
-  display: none !important;
 }
     :root {
       --cinza-escuro: #3A4550;
